@@ -64,9 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const geojsonData = await geojsonResponse.json();
       const currentUrl = window.location.href.split("/");
       const bookId = currentUrl[currentUrl.length - 1];
-
       const downloadsResponse = await fetch(
-        `http://comares.test/index.php/coa/catalog/downloadsPerCountry/${bookId}`
+        `${window.location.origin}/index.php/coa/catalog/downloadsPerCountry/${bookId}`
       );
 
       const downloadsData = await downloadsResponse.json();
